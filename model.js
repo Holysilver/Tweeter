@@ -1,12 +1,12 @@
 
 const Tweeter = function() {
-    let _posts = []
+    const _posts = []
 
     let postIdCounter = 0
     let commentIdCounter = 0
     
     const getPosts = function() {
-        return _posts
+        return [..._posts]
     }
 
     const addPost = function(postText) {
@@ -25,6 +25,7 @@ const Tweeter = function() {
         _posts.push(_post)
     }
 
+    // 1st version of find function. Better to find in any array. 
     const _findPost = function(postId){
         for (postInd in _posts){
             if(_posts[postInd]['id'] == postId) return postInd
@@ -41,7 +42,10 @@ const Tweeter = function() {
     }
 
     const removePost = function(postId) {
-        _posts.splice(_findPost(postId), 1)
+        let postInd = _findPost(postId)
+        if (postInd) {
+            _posts.splice(postInd, 1)
+        }
     }
 
 
@@ -65,8 +69,6 @@ const Tweeter = function() {
         }
     }
 
-
-
     return {
         addPost: addPost,
         removePost: removePost,
@@ -78,18 +80,18 @@ const Tweeter = function() {
 }
 
 
-const tweeter = Tweeter()
+const tweeter2 = Tweeter()
 
-tweeter.addPost("First post!")
-tweeter.addPost("Aw man, I wanted to be first")
+tweeter2.addPost("First post!")
+tweeter2.addPost("Aw man, I wanted to be first")
 
-tweeter.addComment("First comment on first post!", "p1")
-tweeter.addComment("Second comment on first post!!", "p1")
-tweeter.addComment("Third comment on first post!!!", "p1")
+tweeter2.addComment("First comment on first post!", "p1")
+tweeter2.addComment("Second comment on first post!!", "p1")
+tweeter2.addComment("Third comment on first post!!!", "p1")
 
-tweeter.addComment("Don't wory second poster, you'll be first one day.", "p2")
-tweeter.addComment("Yeah, believe in yourself!", "p2")
-tweeter.addComment("Haha second place what a joke.", "p2")
+tweeter2.addComment("Don't wory second poster, you'll be first one day.", "p2")
+tweeter2.addComment("Yeah, believe in yourself!", "p2")
+tweeter2.addComment("Haha second place what a joke.", "p2")
 
 
 
