@@ -5,7 +5,7 @@ const Renderer = function() {
         _posts.empty();
 
         for(const post of posts){
-            const newPost = $(`<div class="post-text" data-id="${post.id}">${post.text}</div>`);
+            const newPost = $(`<div class="post-text" data-id="${post.id}">${post.text}<span></span><button id="deletePost" class="delete">X</button></div>`);
             _posts.append(newPost);
             _posts.append(`<div class="comments" id="c${post.id}">`);
             for (const comment of post.comments){
