@@ -78,3 +78,41 @@ const Tweeter = function() {
     }
 
 }
+
+
+const tweeter = Tweeter()
+
+tweeter.addPost("First post!")
+tweeter.addPost("Aw man, I wanted to be first")
+
+tweeter.addComment("First comment on first post!", "p1")
+tweeter.addComment("Second comment on first post!!", "p1")
+tweeter.addComment("Third comment on first post!!!", "p1")
+
+tweeter.addComment("Don't wory second poster, you'll be first one day.", "p2")
+tweeter.addComment("Yeah, believe in yourself!", "p2")
+tweeter.addComment("Haha second place what a joke.", "p2")
+
+
+
+
+// [
+//     {
+//         text: "First post!",
+//         id: "p1",
+//         comments: [
+//             { id: "c1", text: "First comment on first post!" },
+//             { id: "c2", text: "Second comment on first post!!" },
+//             { id: "c3", text: "Third comment on first post!!!" }
+//         ]
+//     },
+//     {
+//         text: "Aw man, I wanted to be first",
+//         id: "p2",
+//         comments: [
+//             { id: "c4", text: "Don't wory second poster, you'll be first one day." },
+//             { id: "c5", text: "Yeah, believe in yourself!" },
+//             { id: "c6", text: "Haha second place what a joke." }
+//         ]
+//     }
+// ]
